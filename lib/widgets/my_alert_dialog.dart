@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodpanda_seller/constants/colors.dart';
+// import 'package:foodpanda_seller/constants/colors.dart';
 
 class MyAlertDialog extends StatelessWidget {
   final String title;

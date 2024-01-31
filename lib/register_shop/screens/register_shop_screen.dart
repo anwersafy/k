@@ -214,80 +214,80 @@ class _RegisterShopScreenState extends State<RegisterShopScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              // const Text(
-              //   'Shop location',
-              //   style: TextStyle(
-              //     fontSize: 16,
-              //     fontWeight: FontWeight.w600,
-              //   ),
-              // ),
-              // const SizedBox(height: 10),
-              // GestureDetector(
-              //   onTap: () {
-              //     Navigator.pushNamed(
-              //       context,
-              //       SearchAddressManualScreen.routeName,
-              //       arguments: SearchAddressManualScreen(
-              //         mapPreviewController: mapPreviewController,
-              //         initialLatLng: address != null
-              //             ? LatLng(address!.latitude, address!.longitude)
-              //             : null,
-              //         changeAddress: (Address newAddress) {
-              //           setState(() {
-              //             address = newAddress;
-              //           });
-              //         },
-              //       ),
-              //     );
-              //   },
-              //   child: DottedBorder(
-              //     color: Colors.grey[500]!,
-              //     strokeWidth: 1,
-              //     dashPattern: const [10, 6],
-              //     child: Container(
-              //       width: double.infinity,
-              //       padding: const EdgeInsets.all(10),
-              //       child: address == null
-              //           ? SizedBox(
-              //               height: 130,
-              //               child: Center(
-              //                 child: Column(
-              //                   children: [
-              //                     Image.asset(
-              //                       'assets/images/foodpanda_location.png',
-              //                       width: 100,
-              //                     ),
-              //                     const Text(
-              //                       'Choose location',
-              //                       style: TextStyle(
-              //                         fontWeight: FontWeight.w600,
-              //                       ),
-              //                     )
-              //                   ],
-              //                 ),
-              //               ),
-              //             )
-              //           : Column(
-              //               crossAxisAlignment: CrossAxisAlignment.start,
-              //               children: [
-              //                 MapPreview(
-              //                   onMapCreated: (GoogleMapController controller) {
-              //                     setState(() {
-              //                       mapPreviewController = controller;
-              //                     });
-              //                   },
-              //                   selectedAddress: address!,
-              //                 ),
-              //                 const SizedBox(height: 10),
-              //                 Text(
-              //                   '${address!.houseNumber.isEmpty ? '' : address!.houseNumber + ' '}${address!.street}',
-              //                 ),
-              //                 Text(address!.province),
-              //               ],
-              //             ),
-              //     ),
-              //   ),
-              // ),
+              const Text(
+                'Shop location',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 10),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    SearchAddressManualScreen.routeName,
+                    arguments: SearchAddressManualScreen(
+                      mapPreviewController: mapPreviewController,
+                      initialLatLng: address != null
+                          ? LatLng(address!.latitude, address!.longitude)
+                          : null,
+                      changeAddress: (Address newAddress) {
+                        setState(() {
+                          address = newAddress;
+                        });
+                      },
+                    ),
+                  );
+                },
+                child: DottedBorder(
+                  color: Colors.grey[500]!,
+                  strokeWidth: 1,
+                  dashPattern: const [10, 6],
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(10),
+                    child: address == null
+                        ? SizedBox(
+                            height: 130,
+                            child: Center(
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/foodpanda_location.png',
+                                    width: 100,
+                                  ),
+                                  const Text(
+                                    'Choose location',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        : Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              MapPreview(
+                                onMapCreated: (GoogleMapController controller) {
+                                  setState(() {
+                                    mapPreviewController = controller;
+                                  });
+                                },
+                                selectedAddress: address!,
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                '${address!.houseNumber.isEmpty ? '' : address!.houseNumber + ' '}${address!.street}',
+                              ),
+                              Text(address!.province),
+                            ],
+                          ),
+                  ),
+                ),
+              ),
               const SizedBox(height: 20),
               const Text(
                 'Shop background image',

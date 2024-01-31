@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_seller/authentication/screens/authentication_screen.dart';
-import 'package:foodpanda_seller/constants/colors.dart';
+// import 'package:foodpanda_seller/constants/colors.dart';
 import 'package:foodpanda_seller/home/screens/home_screen.dart';
 import 'package:foodpanda_seller/home/screens/home_screen_no_approve.dart';
 import 'package:foodpanda_seller/providers/authentication_provider.dart';
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Color(0xff041C32),
       body: Stack(
         alignment: Alignment.center,
@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
 
 
-          const Positioned(
+          Positioned(
             bottom: 50,
             child: CupertinoActivityIndicator(
               color: Colors.black,

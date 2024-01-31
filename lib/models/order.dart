@@ -49,8 +49,8 @@ class Order {
   List<FoodOrder> foodOrders;
   double totalPrice;
   // double deliveryPrice;
-  double discountPrice;
-  String? voucherId;
+  // double discountPrice;
+  // String? voucherId;
   bool isPaid;
   bool isShopAccept;
   // bool isRiderAccept;
@@ -58,10 +58,10 @@ class Order {
   bool isNear;
   bool isDelivered;
   bool isCancelled;
-  bool isCutlery;
+  // bool isCutlery;
   int time;
   int? deliveredTime;
-  Rider? rider;
+  // Rider? rider;
   Order({
     this.id,
     required this.user,
@@ -70,8 +70,8 @@ class Order {
     required this.foodOrders,
     required this.totalPrice,
     // required this.deliveryPrice,
-    required this.discountPrice,
-    this.voucherId,
+    // required this.discountPrice,
+    // this.voucherId,
     this.isPaid = false,
     this.isShopAccept = false,
     // this.isRiderAccept = false,
@@ -79,10 +79,10 @@ class Order {
     this.isNear = false,
     this.isDelivered = false,
     this.isCancelled = false,
-    this.isCutlery = false,
+    // this.isCutlery = false,
     required this.time,
     this.deliveredTime,
-    this.rider,
+    // this.rider,
   });
 
   Map<String, dynamic> toMap() {
@@ -94,8 +94,8 @@ class Order {
       'foodOrders': foodOrders.map((x) => x.toMap()).toList(),
       'totalPrice': totalPrice,
       // 'deliveryPrice': deliveryPrice,
-      'discountPrice': discountPrice,
-      'voucherId': voucherId,
+      // 'discountPrice': discountPrice,
+      // 'voucherId': voucherId,
       'isPaid': isPaid,
       'isShopAccept': isShopAccept,
       // 'isRiderAccept': isRiderAccept,
@@ -103,10 +103,10 @@ class Order {
       'isNear': isNear,
       'isDelivered': isDelivered,
       'isCancelled': isCancelled,
-      'isCutlery': isCutlery,
+      // 'isCutlery': isCutlery,
       'time': time,
       'deliveredTime': deliveredTime,
-      'rider': rider?.toMap(),
+      // 'rider': rider?.toMap(),
     };
   }
 
@@ -123,25 +123,25 @@ class Order {
       ),
       totalPrice: map['totalPrice'] as double,
       // deliveryPrice: map['deliveryPrice'] as double,
-      discountPrice: map['discountPrice'] as double,
-      voucherId: map['voucherId'] != null ? map['voucherId'] as String : null,
+      // discountPrice: map['discountPrice'] as double,
+      // voucherId: map['voucherId'] != null ? map['voucherId'] as String : null,
       isPaid: map['isPaid'] != null ? map['isPaid'] as bool : false,
       isShopAccept:
           map['isShopAccept'] != null ? map['isShopAccept'] as bool : false,
       // isRiderAccept:
       //     map['isRiderAccept'] != null ? map['isRiderAccept'] as bool : false,
-      isPickup: map['isPickup'] != null ? map['isPickup'] as bool : false,
-      isNear: map['isNear'] != null ? map['isNear'] as bool : false,
-      isDelivered:
-          map['isDelivered'] != null ? map['isDelivered'] as bool : false,
+      // isPickup: map['isPickup'] != null ? map['isPickup'] as bool : false,
+      // isNear: map['isNear'] != null ? map['isNear'] as bool : false,
+      // isDelivered:
+          // map['isDelivered'] != null ? map['isDelivered'] as bool : false,
       isCancelled:
           map['isCancelled'] != null ? map['isCancelled'] as bool : false,
-      isCutlery: map['isCutlery'] != null ? map['isCutlery'] as bool : false,
+      // isCutlery: map['isCutlery'] != null ? map['isCutlery'] as bool : false,
       time: map['time'] as int,
       deliveredTime: map['deliveredTime']?.toInt() ?? 0,
-      rider: map['rider'] != null
-          ? Rider.fromMap(map['rider'] as Map<String, dynamic>)
-          : null,
+      // rider: map['rider'] != null
+          // ? Rider.fromMap(map['rider'] as Map<String, dynamic>)
+          // : null,
     );
   }
 

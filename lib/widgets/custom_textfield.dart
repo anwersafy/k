@@ -58,7 +58,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       focusNode: _focus,
       initialValue: widget.initialValue,
       style: TextStyle(
-        color: widget.isDisabled ? Colors.grey[400] : Colors.white,
+        color: widget.isDisabled ? Colors.grey[400] : Colors.black,
       ),
       readOnly: widget.isDisabled,
       keyboardType: widget.isNumPad ? TextInputType.number : null,
