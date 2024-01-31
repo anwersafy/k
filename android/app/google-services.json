@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "1062559574517",
+    "project_id": "ds-finance-aee15",
+    "storage_bucket": "ds-finance-aee15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062559574517:android:a1ef053493cee420ed58bc",
+        "android_client_info": {
+          "package_name": "com.example.foodpanda_seller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062559574517-0l3ekh6p170rov0hf9d0bs6dispcivf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDv_isPJb-I-Wg3Hf4jDt5OP_Dvsh6Zyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062559574517-0l3ekh6p170rov0hf9d0bs6dispcivf4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1062559574517-hmh96n9e27up1gid1qljmsas8o8qbkoe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodpandaUser.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062559574517:android:a97b114c51c6e46eed58bc",
+        "android_client_info": {
+          "package_name": "com.example.foodpanda_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062559574517-0l3ekh6p170rov0hf9d0bs6dispcivf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDv_isPJb-I-Wg3Hf4jDt5OP_Dvsh6Zyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062559574517-0l3ekh6p170rov0hf9d0bs6dispcivf4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1062559574517-hmh96n9e27up1gid1qljmsas8o8qbkoe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodpandaUser.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
