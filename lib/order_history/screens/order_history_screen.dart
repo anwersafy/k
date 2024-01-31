@@ -31,12 +31,21 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff041C32),
       appBar: AppBar(
-        foregroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: const Color(0xff041C32),
         title: const Text(
           'Orders History',
           style: TextStyle(
             fontSize: 16,
+            color: Colors.white,
           ),
         ),
         centerTitle: true,
@@ -52,9 +61,11 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                 itemBuilder: (context, index) {
                   final order = orders[index];
                   return OrderCard(
+
                     order: order,
                     acceptOrder: () {},
-                    isHistoryOrder: true,
+
+                    isHistoryOrder: true, cancelOrder: () {},
                   );
                 }),
       ),

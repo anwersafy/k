@@ -55,7 +55,7 @@ class _OrderScreenState extends State<OrderScreen> {
 
     if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isEmpty) {
     return const Center(
-    child: Text('No orders available'),
+    child: Text('لا يوجد طلبات'),
     );
     }
 
@@ -71,7 +71,9 @@ class _OrderScreenState extends State<OrderScreen> {
     order: order,
     acceptOrder: () => acceptOrder(
     order: order,
-    ),
+    ), cancelOrder: () => cancelOrder(
+    order: order,
+    )
     );
     },
     );

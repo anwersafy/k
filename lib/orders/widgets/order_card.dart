@@ -11,11 +11,13 @@ import 'package:url_launcher/url_launcher.dart';
 class OrderCard extends StatelessWidget {
   final Order order;
   final VoidCallback acceptOrder;
+  final VoidCallback cancelOrder;
   bool? isHistoryOrder;
   OrderCard({
     super.key,
     required this.order,
     required this.acceptOrder,
+    required this.cancelOrder,
 
     this.isHistoryOrder = false,
   });
@@ -120,37 +122,79 @@ class OrderCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 5),
-              GestureDetector(
-                onTap: () async {
-                  if (order.user.phoneNumber != null) {
-                    Uri phoneNumber =
-                        Uri.parse('tel:+${order.user.phoneNumber}');
+              // GestureDetector(
+              //   onTap: () async {
+              //     if (order.user.phoneNumber != null) {
+              //       Uri phoneNumber =
+              //           Uri.parse('tel:+${order.user.phoneNumber}');
+              //
+              //       if (await launchUrl(phoneNumber)) {
+              //         //dialer opened
+              //       } else {
+              //         //dailer is not opened
+              //       }
+              //     }
+              //   },
+              //   child: Icon(
+              //     Icons.call_outlined,
+              //     color: Color(0xffECB365),
+              //   ),
+              // ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          // هنا نوع الطلب سواء اذن صرف او عهدة
 
-                    if (await launchUrl(phoneNumber)) {
-                      //dialer opened
-                    } else {
-                      //dailer is not opened
-                    }
-                  }
-                },
-                child: Icon(
-                  Icons.call_outlined,
-                  color: Color(0xffECB365),
+          Row(
+            children: [
+              const Text(
+                'Type: ',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
+              const SizedBox(width: 5),
+              Expanded(
+                child: Text(
+                  order.user.name,
+                  style: const TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 5),
+              // GestureDetector(
+              //   onTap: () async {
+              //     if (order.user.phoneNumber != null) {
+              //       Uri phoneNumber =
+              //           Uri.parse('tel:+${order.user.phoneNumber}');
+              //
+              //       if (await launchUrl(phoneNumber)) {
+              //         //dialer opened
+              //       } else {
+              //         //dailer is not opened
+              //       }
+              //     }
+              //   },
+              //   child: Icon(
+              //     Icons.call_outlined,
+              //     color: Color(0xffECB365),
+              //   ),
+              // ),
             ],
           ),
           const SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: Text(
-              '${order.address.houseNumber} ${order.address.street} ${order.address.province}',
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[700],
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.only(right: 20),
+          //   child: Text(
+          //     '${order.address.houseNumber} ${order.address.street} ${order.address.province}',
+          //     style: TextStyle(
+          //       fontSize: 14,
+          //       color: Colors.grey[700],
+          //     ),
+          //   ),
+          // ),
           const SizedBox(height: 20),
           Row(
             children: [
@@ -163,7 +207,7 @@ class OrderCard extends StatelessWidget {
               ),
               const SizedBox(width: 5),
               Text(
-                order.isPaid ? 'Cash' : 'Credit card',
+                order.foodOrders[0].customize,
                 style: const TextStyle(
                   fontSize: 14,
                 ),
@@ -203,6 +247,113 @@ class OrderCard extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 20),
+          // وصف الطلب الليي اليوزر هيكتبه
+
+          Row(
+            children: [
+              const Text(
+                'Description: ',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(width: 5),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    ' ${order.shop.shopDescription}',
+                    style: const TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(width: 5),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          // تاريخ الطلب
+
+          Row(
+            children: [
+              const Text(
+                'Date: ',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(width: 5),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    '\$ ${order.shop.shopDescription}',
+                    style: const TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(width: 5),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              const Text(
+                'Mail: ',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(width: 5),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    ' ${order.user.email}',
+                    style: const TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(width: 5),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          // المرفقات
+          Row(
+            children: [
+              const Text(
+                'ِAttachment: ',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(width: 5),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    ' ${order.shop.shopDescription}',
+                    style: const TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(width: 5),
+                ],
+              ),
+            ],
+          ),
+
+
           ViewDetail(order: order),
           Divider(
             color: Colors.grey[300],
@@ -215,7 +366,7 @@ class OrderCard extends StatelessWidget {
                         Expanded(
                           child: CustomTextButton(
                             text: 'رفض',
-                            onPressed: (){},
+                            onPressed: cancelOrder,
                             isDisabled: false,
                             isOutlined: true,
                           ),
